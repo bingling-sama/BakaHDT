@@ -1,7 +1,0 @@
-cn/booling/bakahdt/Main.java
- cn.booling.bakahdt.Main
-cn/booling/bakahdt/BakaConfig.java
- cn.booling.bakahdt.BakaConfig
- cn.booling.bakahdt.BakaConfig$1
-cn/booling/bakahdt/BakaListener.java
- cn.booling.bakahdt.BakaListener
