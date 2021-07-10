@@ -20,13 +20,14 @@ repositories {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
-    def miraiVersion = "2.6.7"
-    api "net.mamoe:mirai-core-api:$miraiVersion"
-    runtimeOnly "net.mamoe:mirai-core:$miraiVersion"
+    def CORE_VERSION = "2.6.7"
+    def CONSOLE_VERSION = "2.6.7"
+    api "net.mamoe:mirai-core-api:$CORE_VERSION"
+    runtimeOnly "net.mamoe:mirai-core:$CORE_VERSION"
+    api "net.mamoe:mirai-console:$CONSOLE_VERSION"
 }
 
 test {

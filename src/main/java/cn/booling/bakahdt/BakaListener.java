@@ -19,13 +19,19 @@ public class BakaListener extends SimpleListenerHost {
 
         if (message.contains("&ping")) {
             subject.sendMessage("Pong!");
-        } if (message.contains("&test")) {
-            MessageChain reply = new MessageChainBuilder()
-                    .append(new At(event.getSender().getId()))
-                    .append(TextFields.MEMBER_JOIN_TIP)
-                    .asMessageChain();
-            event.getGroup().sendMessage(reply);
         }
+        if (message.contains("&help")) {
+            subject.sendMessage(TextFields.HELP);
+        }
+        if (message.contains()) {
+			subject.sendMessage(TextFields.INFO);
+		}
+        if (message.contains("&rules")) {
+            subject.sendMessage(TextFields.RULES);
+        }
+
+//        if (message.contains("&test")) {
+//        }
     }
 
     @EventHandler
