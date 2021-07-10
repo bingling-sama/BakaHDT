@@ -25,3 +25,6 @@ hs_err_pid*
 /src/main/java/cn/booling/bakahdt/Secret.java
 /cache/
 device.json
+/.gradle/
+/.idea/
+/build/
