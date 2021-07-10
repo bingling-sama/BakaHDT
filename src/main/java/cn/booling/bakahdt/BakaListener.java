@@ -19,6 +19,12 @@ public class BakaListener extends SimpleListenerHost {
 
         if (message.contains("&ping")) {
             subject.sendMessage("Pong!");
+        } if (message.contains("&test")) {
+            MessageChain reply = new MessageChainBuilder()
+                    .append(new At(event.getSender().getId()))
+                    .append(TextFields.MEMBER_JOIN_TIP)
+                    .asMessageChain();
+            event.getGroup().sendMessage(reply);
         }
     }
 
@@ -26,11 +32,8 @@ public class BakaListener extends SimpleListenerHost {
     public static void onMemberJoin(MemberJoinEvent event) {
         MessageChain message = new MessageChainBuilder()
                 .append(new At(event.getMember().getId()))
-                .append(" 欢迎加入Minecraft魔改交流群，进群请先阅读所有置顶公告。")
-                .append(" 提问请携带尽可能多的相关信息")
+                .append(TextFields.MEMBER_JOIN_TIP)
                 .asMessageChain();
-        event.getGroup().sendMessage(message);
-        event.getGroup().sendMessage(message);
         event.getGroup().sendMessage(message);
     }
 }
