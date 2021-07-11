@@ -46,4 +46,20 @@ public class TextFields {
             .append("群内分享的代码片段、音效、材质等资源，使用协议和最终解释权归[发布者]，[商业使用]请提前咨询以避免踩雷。\n")
             .append("-----------------\n")
             .asMessageChain();
+
+    public static final Message ASK = new MessageChainBuilder()
+            .append("提问的正确方式：\n")
+            .append("简明清晰地描述你的游戏版本&遇到的问题\n")
+            .append("魔改问题请将[crafttweaker.log]和log中提到/你认为可能出错的代码使用pastebin发送到群内\n")
+            .append("(详见&pastebin)")
+            .asMessageChain();
+
+    public static final Message PASTEBIN = new MessageChainBuilder()
+            .append("Ubuntu Pastebin使用介绍：\n")
+            .append("1.打开https://pastebin.ubuntu.com/\n")
+            .append("2.将信息复制到Content框内\n")
+            .append("3.点击Paste!\n")
+            .append("4.复制网址栏网址发送至群内")
+            .asMessageChain();
+
 }

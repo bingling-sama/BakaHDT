@@ -23,11 +23,17 @@ public class BakaListener extends SimpleListenerHost {
         if (message.contains("&help")) {
             subject.sendMessage(TextFields.HELP);
         }
-        if (message.contains()) {
+        if (message.contains("&info")) {
 			subject.sendMessage(TextFields.INFO);
 		}
         if (message.contains("&rules")) {
             subject.sendMessage(TextFields.RULES);
+        }
+        if (message.contains("&ask")) {
+            subject.sendMessage(TextFields.ASK);
+        }
+        if (message.contains("&pastebin")) {
+            subject.sendMessage(TextFields.PASTEBIN);
         }
 
 //        if (message.contains("&test")) {
