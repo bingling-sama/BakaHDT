@@ -10,7 +10,7 @@ public class BakaConfig {
     public static final Bot BAKA = BotFactory.INSTANCE.newBot(
             Secret.BOT_ID,
             Secret.BOT_PWD,
-            new BotConfiguration(){{
+            new BotConfiguration() {{
                 fileBasedDeviceInfo();
                 autoReconnectOnForceOffline();
                 setProtocol(MiraiProtocol.ANDROID_PHONE);

@@ -4,6 +4,8 @@ import net.mamoe.mirai.message.data.Message;
 import net.mamoe.mirai.message.data.MessageChainBuilder;
 
 public class TextFields {
+    public static final String IDENTIFIER = "&";
+
     public static final Message INFO = new MessageChainBuilder()
             .append(Secret.BOT_NAME + "是由[冰凌sama]为Minecraft魔改交流群开发的QQ bot，由[雾之湖上的小冰精]友情提供Server\n")
             .append("GitHub仓库地址：https://github.com/bingling-sama/BakaHDT/\n")
@@ -16,6 +18,8 @@ public class TextFields {
             .append("&help  显示此帮助信息\n")
             .append("&info  显示bot信息\n")
             .append("&rules  显示群规\n")
+            .append("&ask  教 你 提 问\n")
+            .append("&pastebin  Ubuntu Pastebin使用方法")
             .asMessageChain();
 
     public static final Message RULES = new MessageChainBuilder()
@@ -57,9 +61,10 @@ public class TextFields {
     public static final Message PASTEBIN = new MessageChainBuilder()
             .append("Ubuntu Pastebin使用介绍：\n")
             .append("1.打开https://pastebin.ubuntu.com/\n")
-            .append("2.将信息复制到Content框内\n")
-            .append("3.点击Paste!\n")
-            .append("4.复制网址栏网址发送至群内")
+            .append("2.填写Poster(随便写)\n")
+            .append("3.将信息复制到Content框内\n")
+            .append("4.点击Paste!\n")
+            .append("5.复制网址栏网址发送至群内")
             .asMessageChain();
 
 }
