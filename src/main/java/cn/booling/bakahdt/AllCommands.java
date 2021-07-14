@@ -12,6 +12,7 @@ public class AllCommands {
         Command.registerCommand("rules", "显示群规", (e) -> simpleReply(e, TextFields.RULES));
         Command.registerCommand("ask", "教 你 提 问", (e) -> simpleReply(e, TextFields.ASK));
         Command.registerCommand("pastebin", "Ubuntu Pastebin使用方法", (e) -> simpleReply(e, TextFields.PASTEBIN));
+        Command.registerCommand("log", "显示log帮助", (e) -> simpleReply(e, TextFields.LOG));
     }
 
     public static void simpleReply(@NotNull MessageEvent event, String message) {

@@ -1,5 +1,6 @@
 package cn.booling.bakahdt;
 
+import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageChainBuilder;
 
@@ -27,6 +28,7 @@ public class TextFields {
             .append(" 欢迎加入Minecraft魔改交流群，进群请先阅读所有置顶公告。提问请携带尽可能多的相关信息\n")
             .append("Discord群：https://discord.gg/sB9PhGcutE/\n")
             .append("CRT等魔改类模组错误还需附带脚本内容和输出LOG。\n")
+            .append("详见&ask&pastebin&log\n")
             .append("-----------------\n")
             .append("能解决你大部分疑惑的视频:\n" +
                     "https://b23.tv/Qu6aAY\n" +
@@ -54,6 +56,13 @@ public class TextFields {
             .asMessageChain();
     public static MessageChain HELP = new MessageChainBuilder()
             .append(Secret.BOT_NAME + "指令一览：\n")
+            .asMessageChain();
+    public static final MessageChain LOG = new MessageChainBuilder()
+            .append(Image.fromId("{F1B925A7-72C1-1666-B861-E002C4492E59}.jpg"))
+            .append("关于log/crash-report：\n")
+            .append("首先在[.minecraft]文件夹找到[crafttweaker.log]和[.minecraft/crash-reports]文件夹下最新的[crash-report.txt]文件\n")
+            .append("然后根据骨头佬的教程[]查看[crash-report.txt]，尝试自己解决问题\n")
+            .append("如果自己百度/Bing/Google无果实在无法解决，请使用pastebin将文件内容发送到群内等待群友/管理解答(详见&ask和&pastebin)\n")
             .asMessageChain();
 
 }

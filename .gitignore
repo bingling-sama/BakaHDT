@@ -28,3 +28,4 @@ device.json
 /.gradle/
 /.idea/
 /build/
+!/src/main/resources/assets/
