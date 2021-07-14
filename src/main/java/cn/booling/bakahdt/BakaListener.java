@@ -27,6 +27,13 @@ public class BakaListener extends SimpleListenerHost {
 
     @EventHandler
     public static void onMemberJoin(@NotNull MemberJoinEvent event) {
+        new Thread(() -> {
+            try {
+                Thread.sleep(2000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
         MessageChain message = new MessageChainBuilder()
                 .append(new At(event.getMember().getId()))
                 .append(TextFields.MEMBER_JOIN_TIP)
