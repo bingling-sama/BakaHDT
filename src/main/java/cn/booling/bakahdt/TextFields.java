@@ -67,16 +67,16 @@ public class TextFields {
             .append(Image.fromId("{F1B925A7-72C1-1666-B861-E002C4492E59}.jpg"))
             .append("关于log/crash-report：\n")
             .append("首先在[.minecraft]文件夹找到[crafttweaker.log]和[.minecraft/crash-reports]文件夹下最新的[crash-report.txt]文件\n")
-            .append("然后根据骨头佬的教程[]查看[crash-report.txt]，尝试自己解决问题\n")
+            .append("然后根据骨头佬的教程[https://www.cnblogs.com/Dinnerbone/p/12045117.html]查看[crash-report.txt]，尝试自己解决问题\n")
             .append("如果自己百度/Bing/Google无果实在无法解决，请使用pastebin将文件内容发送到群内等待群友/管理解答(详见&ask和&pastebin)\n")
             .asMessageChain();
 
     public static final MessageChain CT_COMMANDS = new MessageChainBuilder()
-            .append("CraftTweaker 可用的部分实用指令：")
-            .append("/ct hand 输出玩家手上物品的 ID / 矿辞 (1.12-) / 标签 (1.14+) 等信息，你可以点击有关信息将其复制到剪贴板里。")
-            .append("/ct syntax 检查脚本的语法是否准确。注意语法正确也不代表一定能运行的符合预期。")
-            .append("/ct log 打开 CrT 日志文件，请配合 &pastebin 发送。")
-            .append("/ct inventory 输出玩家物品栏的所有物品的 ID")
-            .append("/reload (1.14+ 可用) 重载脚本。但 CoT 脚本不可重载。")
+            .append("CraftTweaker 可用的部分实用指令：\n")
+            .append("/ct hand 输出玩家手上物品的 ID / 矿辞 (1.12-) / 标签 (1.14+) 等信息，你可以点击有关信息将其复制到剪贴板里。\n")
+            .append("/ct syntax 检查脚本的语法是否准确。注意语法正确也不代表一定能运行的符合预期。\n")
+            .append("/ct log 打开 CrT 日志文件，请配合 &pastebin 发送。\n")
+            .append("/ct inventory 输出玩家物品栏的所有物品的 ID。\n")
+            .append("/reload (1.14+ 可用) 重载脚本。但 CoT 脚本不可重载。\n")
             .asMessageChain();
 }
