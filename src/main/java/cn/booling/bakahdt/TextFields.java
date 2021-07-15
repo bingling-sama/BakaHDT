@@ -72,7 +72,7 @@ public class TextFields {
             .asMessageChain();
 
     public static final MessageChain CT_COMMANDS = new MessageChainBuilder()
-            .append("CraftTweaker 可用的部分实用指令")
+            .append("CraftTweaker 可用的部分实用指令：")
             .append("/ct hand 输出玩家手上物品的 ID / 矿辞 (1.12-) / 标签 (1.14+) 等信息，你可以点击有关信息将其复制到剪贴板里。")
             .append("/ct syntax 检查脚本的语法是否准确。注意语法正确也不代表一定能运行的符合预期。")
             .append("/ct log 打开 CrT 日志文件，请配合 &pastebin 发送。")

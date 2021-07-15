@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 
 public class AllCommands {
     public static void init(TriConsumer<String, String, Consumer<MessageEvent>> registerCustomCommand) {
-        TriConsumer.createChainCaller(registerCustomCommand)
+        TriConsumer.createChainingCaller(registerCustomCommand)
                 .accept("ping", "测试 bot 是否存活", (e) -> simpleReply(e, "Pong!"))
                 .accept("help", "显示此帮助信息", (e) -> simpleReply(e, TextFields.HELP))
                 .accept("ctcommands", "显示 CrT 实用指令", e -> simpleReply(e, TextFields.CT_COMMANDS))

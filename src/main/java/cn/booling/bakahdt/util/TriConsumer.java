@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 public interface TriConsumer<T, U, V> {
     void accept(T t, U u, V v);
 
-    static <T, U, V> ChainingCaller<T, U, V> createChainCaller(@NotNull TriConsumer<T, U, V> triConsumer) {
+    static <T, U, V> ChainingCaller<T, U, V> createChainingCaller(@NotNull TriConsumer<T, U, V> triConsumer) {
         return new ChainingCaller<>(triConsumer);
     }
 
