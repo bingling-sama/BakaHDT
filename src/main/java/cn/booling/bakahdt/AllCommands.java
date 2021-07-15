@@ -5,6 +5,9 @@ import net.mamoe.mirai.event.events.MessageEvent;
 import net.mamoe.mirai.message.data.Message;
 import org.jetbrains.annotations.NotNull;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
 import java.util.function.Consumer;
 
 public class AllCommands {
@@ -17,7 +20,14 @@ public class AllCommands {
                 .accept("rules", "显示群规", (e) -> simpleReply(e, TextFields.RULES))
                 .accept("ask", "教 你 提 问", (e) -> simpleReply(e, TextFields.ASK))
                 .accept("pastebin", "Ubuntu Pastebin 使用方法", (e) -> simpleReply(e, TextFields.PASTEBIN))
-                .accept("log", "显示 log 帮助", (e) -> simpleReply(e, TextFields.LOG));
+                .accept("log", "显示 log 帮助", (e) -> simpleReply(e, TextFields.LOG))
+                .accept("jrrp", "获取今日随机人品值[roll 0-100]", AllCommands::jrrp)
+        ;
+    }
+
+    public static void jrrp(@NotNull MessageEvent event) {
+        Random random = new Random((int) (Integer.parseInt((new SimpleDateFormat("yyMMdd")).format(new Date())) + event.getSender().getId()));
+        simpleReply(event, event.getSenderName() + "今天的人品值是：" + random.nextInt(101));
     }
 
     public static void simpleReply(@NotNull MessageEvent event, String message) {
