@@ -12,6 +12,7 @@ public class TextFields {
             .append("GitHub仓库地址：https://github.com/bingling-sama/BakaHDT/\n")
             .append("有任何意见或建议(或整活的idea)都可以来发issues。")
             .asMessageChain();
+
     public static final MessageChain RULES = new MessageChainBuilder()
             .append("《Minecraft魔改交流群 群规》请熟读并背诵()\n")
             .append("1.不允许多次加群，超过[3次]将被加入本群黑名单;\n")
@@ -24,6 +25,7 @@ public class TextFields {
             .append("8.群内大佬不是神，拒绝伸手党和随意@;\n")
             .append("更多群规详见群公告...")
             .asMessageChain();
+
     public static final MessageChain MEMBER_JOIN_TIP = new MessageChainBuilder()
             .append(" 欢迎加入Minecraft魔改交流群，进群请先阅读所有置顶公告。提问请携带尽可能多的相关信息\n")
             .append("Discord群：https://discord.gg/sB9PhGcutE/\n")
@@ -40,12 +42,14 @@ public class TextFields {
             .append("群内分享的代码片段、音效、材质等资源，使用协议和最终解释权归[发布者]，[商业使用]请提前咨询以避免踩雷。\n")
             .append("-----------------\n")
             .asMessageChain();
+
     public static final MessageChain ASK = new MessageChainBuilder()
             .append("提问的正确方式：\n")
             .append("简明清晰地描述你的游戏版本&遇到的问题\n")
             .append("魔改问题请将[crafttweaker.log]和log中提到/你认为可能出错的代码使用pastebin发送到群内\n")
             .append("(详见&pastebin)")
             .asMessageChain();
+
     public static final MessageChain PASTEBIN = new MessageChainBuilder()
             .append("Ubuntu Pastebin使用介绍：\n")
             .append("1.打开https://pastebin.ubuntu.com/\n")
@@ -54,9 +58,11 @@ public class TextFields {
             .append("4.点击Paste!\n")
             .append("5.复制网址栏网址发送至群内")
             .asMessageChain();
+
     public static MessageChain HELP = new MessageChainBuilder()
             .append(Secret.BOT_NAME + "指令一览：\n")
             .asMessageChain();
+
     public static final MessageChain LOG = new MessageChainBuilder()
             .append(Image.fromId("{F1B925A7-72C1-1666-B861-E002C4492E59}.jpg"))
             .append("关于log/crash-report：\n")
@@ -65,4 +71,12 @@ public class TextFields {
             .append("如果自己百度/Bing/Google无果实在无法解决，请使用pastebin将文件内容发送到群内等待群友/管理解答(详见&ask和&pastebin)\n")
             .asMessageChain();
 
+    public static final MessageChain CT_COMMANDS = new MessageChainBuilder()
+            .append("CraftTweaker 可用的部分实用指令")
+            .append("/ct hand 输出玩家手上物品的 ID / 矿辞 (1.12-) / 标签 (1.14+) 等信息，你可以点击有关信息将其复制到剪贴板里。")
+            .append("/ct syntax 检查脚本的语法是否准确。注意语法正确也不代表一定能运行的符合预期。")
+            .append("/ct log 打开 CrT 日志文件，请配合 &pastebin 发送。")
+            .append("/ct inventory 输出玩家物品栏的所有物品的 ID")
+            .append("/reload (1.14+ 可用) 重载脚本。但 CoT 脚本不可重载。")
+            .asMessageChain();
 }
