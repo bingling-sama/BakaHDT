@@ -30,7 +30,7 @@ public class Main {
             if (CrTVersionGetter.versionUpdated) {
                 CrTVersionGetter.versionUpdated = false;
                 Map<String, SortedSet<ModVersion>> versions = CrTVersionGetter.getVersions().getVersions();
-                ModVersion mc1_12_2LatestVersion = versions.get("1.12.2").last();
+                ModVersion mc1_12_2LatestVersion = versions.get("1.12").last();
                 ModVersion mc1_16_5LatestVersion = versions.get("1.16.5").last();
                 MessageChain message = new MessageChainBuilder()
                         .append("CraftTweaker 版本已更新！\n")
