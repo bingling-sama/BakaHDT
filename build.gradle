@@ -32,9 +32,10 @@ dependencies {
     api "net.mamoe:mirai-core-api:$MIRAI_VERSION"
     runtimeOnly "net.mamoe:mirai-core:$MIRAI_VERSION"
 
+    implementation 'com.google.code.gson:gson:2.8.7'
+
     // useless
     api "net.mamoe:mirai-console:$MIRAI_VERSION"
-    api "com.mojang:brigadier:1.0.17"
 }
 
 test {

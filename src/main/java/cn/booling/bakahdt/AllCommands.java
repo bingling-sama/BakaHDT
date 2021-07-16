@@ -26,7 +26,7 @@ public class AllCommands {
     }
 
     public static void jrrp(@NotNull MessageEvent event) {
-        Random random = new Random((int) (Integer.parseInt((new SimpleDateFormat("yyMMdd")).format(new Date())) + event.getSender().getId()));
+        Random random = new Random((int) (Integer.parseInt((new SimpleDateFormat("yyMMdd")).format(new Date())) ^ event.getSender().getId()));
         simpleReply(event, event.getSenderName() + "今天的人品值是：" + random.nextInt(101));
     }
 
