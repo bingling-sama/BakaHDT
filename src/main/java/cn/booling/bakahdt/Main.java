@@ -48,7 +48,7 @@ public class Main {
                         .append(mc1_16_5LatestVersion.getReleaseType().getDisplayName())
                         .append(")\n")
                         .append("下载地址：")
-                        .append(mc1_12_2LatestVersion.getDownloadLink())
+                        .append(mc1_16_5LatestVersion.getDownloadLink())
                         .build();
                 tweakerGroup.sendMessage(message);
             }
