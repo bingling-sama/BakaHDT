@@ -29,3 +29,4 @@ device.json
 /.idea/
 /build/
 !/src/main/resources/assets/
+*.temp
