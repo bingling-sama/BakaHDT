@@ -103,12 +103,12 @@ public class TextFields {
 
     public static final MessageChain USEFUL_LINKS = new MessageChainBuilder()
             .append("实用链接:\n")
-            .append("CraftTweaker *官方英文文档*: https://docs.blamejared.com/")
-            .append("MineTweaker 官方 Wiki: http://minetweaker3.powerofbytes.com/wiki/Main_Page/")
-            .append("TweakerGroup Discord: https://discord.gg/4XsUtUfDFt/")
-            .append("BlameJared Discord: https://discord.blamejared.com/")
-            .append("Ubuntu Pastebin: https://paste.ubuntu.com/")
-            .append("Hastebin (DimDev): https://paste.dimdev.org/")
-            .append("CurseForge Minecraft Mods: https://www.curseforge.com/minecraft/mc-mods/")
+            .append("CraftTweaker *官方英文文档*: https://docs.blamejared.com/\n")
+            .append("MineTweaker 官方 Wiki: http://minetweaker3.powerofbytes.com/wiki/Main_Page/\n")
+            .append("TweakerGroup Discord: https://discord.gg/4XsUtUfDFt/\n")
+            .append("BlameJared Discord: https://discord.blamejared.com/\n")
+            .append("Ubuntu Pastebin: https://paste.ubuntu.com/\n")
+            .append("Hastebin (DimDev): https://paste.dimdev.org/\n")
+            .append("CurseForge Minecraft Mods: https://www.curseforge.com/minecraft/mc-mods/\n")
             .asMessageChain();
 }

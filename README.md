@@ -9,6 +9,7 @@
 
 - 请使用 JDK11+ & Kotlin1.5.21+
 - 请自行配置 Secret 内容
+- 要构建可执行 jar，请执行`gradlew shadowJar`
 
 完成配置后可直接运行 `Main()` 方法测试项目。
 

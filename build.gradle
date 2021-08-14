@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'cn.booling'
-version '0.2.6-SNAPSHOT'
+version '0.2.7-SNAPSHOT'
 
 shadowJar {
     manifest {
@@ -25,8 +25,8 @@ repositories {
 dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.21'
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 
     def MIRAI_VERSION = "2.6.7"
     api "net.mamoe:mirai-core-api:$MIRAI_VERSION"
@@ -34,10 +34,8 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.8.7'
 
-    implementation "com.google.code.gson:gson:2.8.7"
-
     // useless
-    api "net.mamoe:mirai-console:$MIRAI_VERSION"
+    // api "net.mamoe:mirai-console:$MIRAI_VERSION"
 }
 
 test {

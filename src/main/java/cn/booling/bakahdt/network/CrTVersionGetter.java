@@ -1,6 +1,5 @@
 package cn.booling.bakahdt.network;
 
-
 import cn.booling.bakahdt.Main;
 import cn.booling.bakahdt.version.ModVersion;
 import cn.booling.bakahdt.version.ModVersionCollection;
@@ -19,7 +18,7 @@ import java.util.SortedSet;
 import java.util.TimerTask;
 
 /**
- * @author youyihj
+ * @author youyihj bingling_sama
  */
 public class CrTVersionGetter extends TimerTask {
     private static final String API_URL = "https://addons-ecs.forgesvc.net/api/v2/addon/239197/files";
