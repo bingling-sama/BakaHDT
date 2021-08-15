@@ -6,10 +6,13 @@ import java.io.*
 suspend fun MessageEvent.simpleReply(message: String) = this.subject.sendMessage(message)
 
 fun generateFile(fileName: String) {
-    val path = "src/main/resources/${fileName}"
     val file = File(fileName)
     if (!file.exists()) {
         file.createNewFile()
     }
-    file.writeText(File(path).readText())
+    getResourceAsText(fileName).let { file.writeText(it) }
+}
+
+fun getResourceAsText(path: String): String {
+    return object {}::class.java.getResourceAsStream("/${path}")!!.bufferedReader().readText()
 }

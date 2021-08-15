@@ -5,13 +5,34 @@
 
 ## 贡献 | Contribute
 
+### 配置开发环境 | Setup Dev Env
+
 关于本项目的环境搭建问题，如下几点：
 
 - 请使用 JDK11+ & Kotlin1.5.21+
 - 请自行配置 Secret 内容
-- 要构建可执行 jar，请执行`gradlew shadowJar`
+
+### 做出更改 | Make Changes
+
+`permission.json` 格式：直接填写 QQ 号(Long[])
+
+`commands.json` 格式：
+
+- `name` 必填
+- `info` 可选(不填将不会出现在&help内)
+- `permission` 可选(默认为Member)
+- `message`：必填(List\<String>类型)
+
+> 要构建可执行 jar，请执行`gradlew shadowJar`
 
 完成配置后可直接运行 `Main()` 方法测试项目。
+
+## 待办 | TODO
+
+- [x] Move To Kotlin
+- [ ] CrT Version Checker Fix
+- [ ] Commands Completion
+- [ ] And More...
 
 ## 许可 | License
 

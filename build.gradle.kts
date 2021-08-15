@@ -1,3 +1,5 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.*
+
 plugins {
     java
     kotlin("jvm") version "1.5.21"
@@ -6,7 +8,11 @@ plugins {
 }
 
 group = "cn.booling.bakahdt"
-version = "0.2.7-SNAPSHOT"
+version = "0.3.0-SNAPSHOT"
+
+tasks.withType<ShadowJar> {
+    manifest.attributes["Main-Class"] = "cn.booling.bakahdt.MainKt"
+}
 
 repositories {
     mavenCentral()
