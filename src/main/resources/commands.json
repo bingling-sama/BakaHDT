@@ -1,0 +1,11 @@
+{
+  "commands": [
+    {
+      "name": "ping",
+      "info": "Bot存活测试",
+      "messages": [
+        "Pong!"
+      ]
+    }
+  ]
+}
