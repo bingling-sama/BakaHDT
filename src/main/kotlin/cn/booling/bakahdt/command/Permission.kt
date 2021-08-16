@@ -1,7 +1,9 @@
 package cn.booling.bakahdt.command
 
+import cn.booling.bakahdt.*
 import cn.booling.bakahdt.command.Permission.*
 import kotlinx.serialization.*
+import kotlinx.serialization.json.*
 import net.mamoe.mirai.contact.*
 
 var permissionMap = PermissionMap()
@@ -23,9 +25,39 @@ fun String.getPermission(): Permission {
 
 @Serializable
 data class PermissionMap(
-    var op: List<Long> = mutableListOf(),
-    var banned: List<Long> = mutableListOf()
-)
+    var op: MutableList<Long> = mutableListOf(),
+    var banned: MutableList<Long> = mutableListOf()
+) {
+    fun clear() {
+        op = mutableListOf()
+        banned = mutableListOf()
+    }
+
+    private fun save() {
+        permissionsFile.writeText(Json.encodeToString(this))
+        logger.info(this.toString())
+    }
+
+    fun op(id: Long) {
+        if (!op.contains(id)) op.add(id)
+        save()
+    }
+
+    fun deop(id: Long) {
+        if (op.contains(id)) op.remove(id)
+        save()
+    }
+
+    fun ban(id: Long) {
+        if (!banned.contains(id) && !op.contains(id)) banned.add(id)
+        save()
+    }
+
+    fun unban(id: Long) {
+        if (banned.contains(id)) banned.remove(id)
+        save()
+    }
+}
 
 fun User.getPermission(): Permission {
     return when (this.id) {
@@ -38,7 +70,7 @@ fun User.getPermission(): Permission {
 fun User.hasPermission(permission: Permission): Boolean {
     return when (this.getPermission()) {
         OP -> return true
-        MEMBER -> this.getPermission() == permission
+        MEMBER -> this.getPermission() == permission || this.getPermission() == OP
         BANNED -> return false
     }
 }

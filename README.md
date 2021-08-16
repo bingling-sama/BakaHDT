@@ -30,6 +30,8 @@
 ## 待办 | TODO
 
 - [x] Move To Kotlin
+- [x] Permission System
+- [ ] Rebuild Command Register System
 - [ ] CrT Version Checker Fix
 - [ ] Commands Completion
 - [ ] And More...

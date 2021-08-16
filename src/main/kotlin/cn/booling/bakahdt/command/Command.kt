@@ -5,6 +5,7 @@ import kotlinx.serialization.*
 import net.mamoe.mirai.event.events.*
 
 var commands = mutableMapOf<String, Command>()
+var simpleCommands = mutableMapOf<String, SimpleCommand>()
 
 @Serializable
 data class Command(
@@ -25,15 +26,7 @@ data class SimpleCommand(
     val info: String? = null,
     val permission: String = "member",
     val messages: List<String>
-) {
-    fun toCommand(): Command {
-        var msg = ""
-        messages.forEach { message ->
-            msg += message + "\n"
-        }
-        return Command(this.name, this.info, this.permission.getPermission()) { event -> event.simpleReply(msg) }
-    }
-}
+)
 
 @Serializable
 data class CommandMap(var commands: List<SimpleCommand> = mutableListOf())
