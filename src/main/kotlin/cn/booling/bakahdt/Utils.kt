@@ -40,7 +40,9 @@ fun loadPermissionMap() {
 fun loadSimpleCommands() {
     val commandMap = Json.decodeFromString<CommandMap>(File("commands.json").readText())
     commandMap.commands.forEach { cmd ->
-        simpleCommands[cmd.name] = cmd
+        if (cmd.messages.isNotEmpty()) simpleCommands[cmd.name] = cmd
+        if (cmd.info != null) TextFields.HELP = TextFields.HELP.plus("\n${cmd.name}  ${cmd.info}")
+        logger.info("Loaded command: ${cmd.name} ${cmd.info}")
     }
     logger.info("Simple Commands Reloaded")
 }

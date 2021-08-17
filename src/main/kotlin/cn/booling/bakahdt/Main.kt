@@ -4,6 +4,8 @@ import net.mamoe.mirai.*
 import net.mamoe.mirai.utils.*
 import java.io.*
 
+val IDENTIFIER = "/"
+
 val BAKA = BotFactory.newBot(BOT_ID, BOT_PWD) {
     enableContactCache()
     fileBasedDeviceInfo()

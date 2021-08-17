@@ -19,9 +19,9 @@
 `commands.json` 格式：
 
 - `name` 必填
-- `info` 可选(不填将不会出现在&help内)
-- `permission` 可选(默认为Member)
-- `message`：必填(List\<String>类型)
+- `info` 可选(不填将不会出现在 &help 内)
+- `permission` 可选(默认为 Member )
+- `message` 可选(不填用于为内建指令添加 info )(List\<String> 类型)
 
 > 要构建可执行 jar，请执行`gradlew shadowJar`
 
@@ -31,7 +31,7 @@
 
 - [x] Move To Kotlin
 - [x] Permission System
-- [ ] Rebuild Command Register System
+- [x] Rebuild Command Register System
 - [ ] CrT Version Checker Fix
 - [ ] Commands Completion
 - [ ] And More...

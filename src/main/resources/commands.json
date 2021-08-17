@@ -6,6 +6,18 @@
       "messages": [
         "Pong!"
       ]
+    },
+    {
+      "name": "info",
+      "info": "显示Bot资料"
+    },
+    {
+      "name": "help",
+      "info": "显示Bot帮助信息"
+    },
+    {
+      "name": "jrrp",
+      "info": "获取今日随机人品值[roll 0~100]"
     }
   ]
 }

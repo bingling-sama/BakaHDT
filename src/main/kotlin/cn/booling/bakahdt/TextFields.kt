@@ -4,7 +4,7 @@ import net.mamoe.mirai.message.data.*
 import net.mamoe.mirai.message.data.Image.Key.fromId
 
 object TextFields {
-    const val IDENTIFIER = "&"
+    // do not move to [commands.json]
     val INFO = MessageChainBuilder()
         .append(
             """
@@ -14,6 +14,11 @@ object TextFields {
             """.trimIndent()
         )
         .asMessageChain()
+    var HELP = MessageChainBuilder()
+        .append("${BOT_NAME}指令一览：")
+        .asMessageChain()
+
+    // move all this to [commands.json]
     val RULES = MessageChainBuilder()
         .append(
             """
@@ -68,13 +73,6 @@ object TextFields {
             3.将信息复制到Content框内
             4.点击Paste!
             5.复制网址栏网址发送至群内
-        """.trimIndent()
-        )
-        .asMessageChain()
-    var HELP = MessageChainBuilder()
-        .append(
-            """
-            ${BOT_NAME}指令一览：
         """.trimIndent()
         )
         .asMessageChain()
