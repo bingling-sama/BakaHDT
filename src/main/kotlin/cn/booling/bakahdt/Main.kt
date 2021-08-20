@@ -1,10 +1,12 @@
 package cn.booling.bakahdt
 
 import net.mamoe.mirai.*
+import net.mamoe.mirai.event.*
+import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.utils.*
 import java.io.*
 
-val IDENTIFIER = "/"
+const val IDENTIFIER = "/"
 
 val BAKA = BotFactory.newBot(BOT_ID, BOT_PWD) {
     enableContactCache()
@@ -12,6 +14,8 @@ val BAKA = BotFactory.newBot(BOT_ID, BOT_PWD) {
     autoReconnectOnForceOffline()
     protocol = BotConfiguration.MiraiProtocol.ANDROID_PHONE
 }
+val TWEAKER_CHANNEL =
+    GlobalEventChannel.filter { ev -> ev is GroupEvent && ev.group == BAKA.getGroupOrFail(624487948L) }
 val logger = BAKA.logger
 var commandsFile: File = File("commands.json")
 var permissionsFile: File = File("permissions.json")

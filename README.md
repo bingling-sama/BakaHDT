@@ -32,8 +32,9 @@
 - [x] Move To Kotlin
 - [x] Permission System
 - [x] Rebuild Command Register System
+- [x] Commands Completion
+- [x] Member Join Tips
 - [ ] CrT Version Checker Fix
-- [ ] Commands Completion
 - [ ] And More...
 
 ## 许可 | License

@@ -41,16 +41,20 @@ fun loadSimpleCommands() {
     val commandMap = Json.decodeFromString<CommandMap>(File("commands.json").readText())
     commandMap.commands.forEach { cmd ->
         if (cmd.messages.isNotEmpty()) simpleCommands[cmd.name] = cmd
-        if (cmd.info != null) TextFields.HELP = TextFields.HELP.plus("\n${cmd.name}  ${cmd.info}")
+        if (cmd.info != null) TextFields.HELP = TextFields.HELP.plus("\n$IDENTIFIER${cmd.name}  ${cmd.info}")
         logger.info("Loaded command: ${cmd.name} ${cmd.info}")
     }
     logger.info("Simple Commands Reloaded")
 }
 
 fun List<String>.toMessage(): String {
-    var ret = ""
-    this.forEach { ret += it + "\n" }
-    return ret
+    if (this.size != 1) {
+        var ret = ""
+        this.forEach { ret += it + "\n" }
+        return ret
+    } else {
+        return this[0]
+    }
 }
 
 suspend fun MessageEvent.simpleReply(message: String) = this.subject.sendMessage(message)

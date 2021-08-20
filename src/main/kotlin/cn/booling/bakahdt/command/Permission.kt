@@ -49,7 +49,7 @@ data class PermissionMap(
     }
 
     fun ban(id: Long) {
-        if (!banned.contains(id) && !op.contains(id)) banned.add(id)
+        if (!op.contains(id) && !banned.contains(id)) banned.add(id)
         save()
     }
 

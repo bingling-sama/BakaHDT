@@ -51,6 +51,22 @@
       ]
     },
     {
+      "name": "rules",
+      "info": "显示群规",
+      "messages": [
+        "《Minecraft魔改交流群 群规》请熟读并背诵()",
+        "1.不允许多次加群，超过[3次]将被加入本群黑名单;",
+        "2.禁止以任何形式发布有关 [键政/商业广告/非私人服务器宣传] 的消息;",
+        "3.禁止以任何形式发布R18等[限制级]内容，擦边球也不行;",
+        "4.禁止以任何形式发布付费资源;",
+        "5.看Wiki(真的有很多问题看Wiki就能解决);",
+        "6.看Wiki(第一次警告，第二次十分钟，第三次飞机票);",
+        "7.看Wiki(重要的事情说三遍);",
+        "8.群内大佬不是神，拒绝伸手党和随意@;",
+        "更多群规详见群公告..."
+      ]
+    },
+    {
       "name": "crtcmds",
       "info": "CraftTweaker 部分常用指令使用方法",
       "messages": [
@@ -73,12 +89,12 @@
         "/mt oredict 打印所有游戏内存在的矿辞。",
         "/mt liquids 输出游戏内所有流体的注册 ID。",
         "/mt blocks 可以输出游戏内所有方块的注册ID。",
-        ",/mt blockinfo 开启时左右键可查看方块数据，再次输入指令以关闭。",
+        "/mt blockinfo 开启时左右键可查看方块数据，再次输入指令以关闭。",
         "/mt reload 重载脚本。"
       ]
     },
     {
-      "name": "yvsc",
+      "name": "whyvsc",
       "info": "为什么要使用 VisualStudio Code ？",
       "messages": [
         "VisualStudio Code(以下简称VSCode) 是当下编写 ZenScript 代码的最佳选择之一, 也是本群极力推荐的 文本编辑工具。",
@@ -100,7 +116,7 @@
         "TweakerGroup Discord: https://discord.gg/4XsUtUfDFt/",
         "BlameJared Discord: https://discord.blamejared.com/",
         "Ubuntu Pastebin: https://paste.ubuntu.com/",
-        "Hastebin (DimDev): https://paste.dimdev.org/",
+        "Hastebin (DimDev): http://paste.dimdev.org/",
         "CurseForge Minecraft Mods: https://www.curseforge.com/minecraft/mc-mods/"
       ]
     }

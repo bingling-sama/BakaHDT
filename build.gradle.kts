@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "cn.booling.bakahdt"
-version = "0.3.1-SNAPSHOT"
+version = "0.3.2-SNAPSHOT"
 
 tasks.withType<ShadowJar> {
     manifest.attributes["Main-Class"] = "cn.booling.bakahdt.MainKt"
