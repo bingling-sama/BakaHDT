@@ -22,6 +22,7 @@ dependencies {
     val miraiVersion = "2.7-RC"
     api("net.mamoe:mirai-core-api:$miraiVersion")
     runtimeOnly("net.mamoe:mirai-core:$miraiVersion")
+    implementation("org.jsoup:jsoup:1.13.1")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
     implementation("org.apache.logging.log4j:log4j-core:2.14.1")
     implementation("com.google.code.gson:gson:2.8.7")
