@@ -1,5 +1,6 @@
 package cn.booling.bakahdt
 
+import cn.booling.bakahdt.command.*
 import net.mamoe.mirai.*
 import net.mamoe.mirai.event.*
 import net.mamoe.mirai.event.events.*

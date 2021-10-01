@@ -3,8 +3,10 @@ package cn.booling.bakahdt.command
 import cn.booling.bakahdt.*
 import cn.booling.bakahdt.command.Permission.*
 import kotlinx.serialization.*
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.*
 import net.mamoe.mirai.contact.*
+import java.io.*
 
 var permissionMap = PermissionMap()
 
@@ -58,6 +60,12 @@ data class PermissionMap(
         save()
     }
 }
+
+fun loadPermissionMap() {
+    permissionMap = Json.decodeFromString(File("permissions.json").readText())
+    logger.info("Permissions Reloaded")
+}
+
 
 fun User.getPermission(): Permission {
     return when (this.id) {

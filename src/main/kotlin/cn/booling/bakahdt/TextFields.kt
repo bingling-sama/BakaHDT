@@ -3,11 +3,11 @@ package cn.booling.bakahdt
 import net.mamoe.mirai.message.data.*
 
 object TextFields {
-    // do not move to [commands.json]
+    // do not move these to [commands.json]
     val INFO = MessageChainBuilder()
         .append(
             """
-            ${BOT_NAME}是由[冰凌sama]为Minecraft魔改交流群开发的QQ bot，由[科星]友情提供Server
+            ${BOT_NAME}是由[冰凌sama]为Minecraft魔改交流群开发的QQ bot，由[没有Server]友情提供Server
             GitHub仓库地址：https://github.com/bingling-sama/BakaHDT/
             有任何意见或建议(或整活的idea)都可以来发issues。
             """.trimIndent()

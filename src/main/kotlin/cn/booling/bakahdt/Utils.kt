@@ -1,28 +1,33 @@
 package cn.booling.bakahdt
 
-import cn.booling.bakahdt.command.*
-import kotlinx.serialization.*
-import kotlinx.serialization.json.*
-import net.mamoe.mirai.event.events.*
-import net.mamoe.mirai.message.data.*
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import org.jsoup.select.Elements
+import net.mamoe.mirai.utils.*
+import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
+import okhttp3.*
+import org.jsoup.*
+import org.jsoup.nodes.*
+import org.jsoup.select.*
 import java.io.*
-import java.text.*
 import java.util.*
-import kotlin.random.*
 
-fun getImage(url: String, file: File): ByteArray {
+fun readImage(url: String): ExternalResource {
+    val base64Prefix = "data:image/png;base64,"
+    return if (url.startsWith(base64Prefix)) {
+        Base64.getDecoder().decode(url.substring(base64Prefix.length)).toExternalResource()
+    } else {
+        getImage(
+            when {
+                url.startsWith('/') -> "https://www.mcmod.cn$url"
+                url.startsWith("//") -> "https:$url"
+                else -> url
+            }
+        ).toExternalResource()
+    }
+}
+
+fun getImage(url: String): InputStream {
     val okHttpClient = OkHttpClient()
     val request = Request.Builder().url(url).build()
-    val imageByte = okHttpClient.newCall(request).execute().body!!.bytes()
-    val fileParent = file.parentFile
-    if (!fileParent.exists()) fileParent.mkdir()
-        file.writeBytes(imageByte)
-    return imageByte
+    return okHttpClient.newCall(request).execute().body!!.byteStream()
 }
 
 fun getRequest(url: String): String {
@@ -74,39 +79,4 @@ fun generateFile(fileName: String) {
 
 fun getResourceAsText(path: String): String {
     return object {}::class.java.getResourceAsStream("/${path}")!!.bufferedReader().readText()
-}
-
-fun loadPermissionMap() {
-    permissionMap = Json.decodeFromString(File("permissions.json").readText())
-    logger.info("Permissions Reloaded")
-}
-
-fun loadSimpleCommands() {
-    val commandMap = Json.decodeFromString<CommandMap>(File("commands.json").readText())
-    commandMap.commands.forEach { cmd ->
-        if (cmd.messages.isNotEmpty()) simpleCommands[cmd.name] = cmd
-        if (cmd.info != null) TextFields.HELP = TextFields.HELP.plus("\n$IDENTIFIER${cmd.name}  ${cmd.info}")
-        logger.info("Loaded command: ${cmd.name} ${cmd.info}")
-    }
-    logger.info("Simple Commands Reloaded")
-}
-
-fun List<String>.toMessage(): String {
-    if (this.size != 1) {
-        var ret = ""
-        this.forEach { ret += it + "\n" }
-        return ret
-    } else {
-        return this[0]
-    }
-}
-
-suspend fun MessageEvent.simpleReply(message: String) = this.subject.sendMessage(message)
-suspend fun MessageEvent.simpleReply(message: MessageChain) = this.subject.sendMessage(message)
-
-fun MessageEvent.jrrp(): String {
-    val random = Random(
-        (SimpleDateFormat("yyMMdd").format(Date()).toInt() xor this.sender.id.toInt()).toLong()
-    )
-    return "${this.sender.nick} 今天的人品值是：${random.nextInt(101)}"
 }
