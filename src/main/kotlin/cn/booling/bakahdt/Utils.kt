@@ -1,13 +1,20 @@
 package cn.booling.bakahdt
 
-import net.mamoe.mirai.utils.*
+import net.mamoe.mirai.event.events.MessageEvent
+import net.mamoe.mirai.utils.ExternalResource
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
-import okhttp3.*
-import org.jsoup.*
-import org.jsoup.nodes.*
-import org.jsoup.select.*
-import java.io.*
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import org.jsoup.select.Elements
+import java.io.File
+import java.io.InputStream
 import java.util.*
+
+fun MessageEvent.hasUrl(): Boolean {
+    return this.message.contentToString().contains("http")
+}
 
 fun readImage(url: String): ExternalResource {
     val base64Prefix = "data:image/png;base64,"
@@ -36,11 +43,11 @@ fun getRequest(url: String): String {
     return okHttpClient.newCall(request).execute().body!!.string()
 }
 
-fun parseWebsiteBody(parseWebBody : String): Document {
+fun parseWebsiteBody(parseWebBody: String): Document {
     return Jsoup.parse(parseWebBody)
 }
 
-fun getDocument(url: String) : Document {
+fun getDocument(url: String): Document {
     return parseWebsiteBody(getRequest(url))
 }
 

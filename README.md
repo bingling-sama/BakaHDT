@@ -16,7 +16,7 @@
 > BOT_ID: Long (bot账号QQ号)   
 > BOT_PWD: String (bot账号QQ密码)   
 > BOT_NAME: String (自定义bot名称)   
-> ADMIN: MutableList<Long> (bot最高管理员列表,填入管理员QQ号)
+> ADMIN: Mut    ableList<Long> (bot最高管理员列表,填入管理员QQ号)
 
 ### 做出更改 | Make Changes
 
@@ -39,7 +39,9 @@
 - [x] Rebuild Command Register System
 - [x] Commands Completion
 - [x] Member Join Tips
+- [x] `https://` Link Resolve
 - [ ] CrT Version Checker Fix
+- [ ] `/jrrp` Ranking
 - [ ] And More...
 
 ## 许可 | License

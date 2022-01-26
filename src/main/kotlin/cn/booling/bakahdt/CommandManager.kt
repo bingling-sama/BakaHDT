@@ -1,12 +1,17 @@
 package cn.booling.bakahdt
 
 import cn.booling.bakahdt.command.*
+import kotlinx.coroutines.delay
 import net.mamoe.mirai.event.*
-import net.mamoe.mirai.event.events.*
-import net.mamoe.mirai.message.data.*
-import java.text.*
+import net.mamoe.mirai.event.events.MemberJoinEvent
+import net.mamoe.mirai.event.events.MessageEvent
+import net.mamoe.mirai.message.data.At
+import net.mamoe.mirai.message.data.MessageChain
+import net.mamoe.mirai.message.data.MessageChainBuilder
+import net.mamoe.mirai.message.data.firstIsInstanceOrNull
+import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.random.*
+import kotlin.random.Random
 
 typealias CommandHandler = MessageSubscribersBuilder<MessageEvent, Listener<MessageEvent>, Unit, Unit>
 
@@ -28,11 +33,11 @@ fun CommandHandler.onMemberCommand(cmd: String) = content {
     this.sender.hasPermission(Permission.MEMBER) && "$IDENTIFIER$cmd" in this.message.contentToString()
 }
 
-var subscribeMessages = BAKA.eventChannel.subscribeMessages {
+val subscribeMessages = BAKA.eventChannel.subscribeMessages {
     // simple commands
     for ((cmd, ret) in simpleCommands) {
         contains("$IDENTIFIER$cmd") {
-            if (this.sender.hasPermission(Permission.MEMBER)) {
+            if (this.sender.hasPermission(Permission.MEMBER) && !this.hasUrl()) {
                 this.simpleReply(ret.messages.toMessage())
             }
         }
@@ -103,40 +108,12 @@ var subscribeMessages = BAKA.eventChannel.subscribeMessages {
         this.simpleReply(this.jrrp())
     }
 
-//    onMemberCommand("mcmod").invoke {
-//        val list = this.message.contentToString().split("\\s+".toRegex(),limit=3)
-//        val filter = if (list[1]!="") {
-//            list[1].getFilter()
-//        } else {
-//            this.simpleReply("你要查询什么类型呢(ALL,MOD,DATA,TUTORIAL)")
-//            var filter = Filter.ALL
-//            try {
-//                filter = nextEvent<MessageEvent>(10000) { it.sender.id == this.sender.id }.message.contentToString().getFilter()
-//            } catch (e: TimeoutCancellationException) {
-//                this.simpleReply("已超时,请重新查询")
-//            }
-//            filter
-//        }
-//        val name = if (list[2]!="") {
-//            list[2]
-//        } else {
-//            this.simpleReply("你要查询的关键词是什么呢")
-//            try
-//            ""
-//        }
-//        this.mcmod(filter, name)
-//    }
 }
 
 class TweakerListener : SimpleListenerHost() {
     @EventHandler
     suspend fun onMemberJoin(event: MemberJoinEvent) {
-        Thread {
-            try {
-                Thread.sleep(2000L)
-            } catch (ignored: InterruptedException) {
-            }
-        }.start()
+        delay(2000)
         val message = MessageChainBuilder()
             .append(At(event.member.id))
             .append(TextFields.MEMBER_JOIN_TIP)
