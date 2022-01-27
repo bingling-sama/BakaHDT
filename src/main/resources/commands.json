@@ -26,7 +26,7 @@
         "提问的正确方式：",
         "简明清晰地描述你的游戏版本&遇到的问题",
         "魔改问题请将[crafttweaker.log]和log中提到/你认为可能出错的代码使用pastebin发送到群内",
-        "(详见&pastebin)"
+        "(详见/pastebin)"
       ]
     },
     {
@@ -34,7 +34,7 @@
       "info": "pastebin 使用方法",
       "messages": [
         "Ubuntu Pastebin使用介绍：",
-        "1.打开https://pastebin.ubuntu.com.cn/",
+        "1.打开https://paste.ubuntu.com.cn/",
         "2.填写Poster(随便写)",
         "3.将信息复制到Content框内",
         "4.点击Paste!",
@@ -115,7 +115,7 @@
         "MineTweaker 官方 Wiki: http://minetweaker3.powerofbytes.com/wiki/Main_Page/",
         "TweakerGroup Discord: https://discord.gg/4XsUtUfDFt/",
         "BlameJared Discord: https://discord.blamejared.com/",
-        "Ubuntu Pastebin: https://paste.ubuntu.com/",
+        "Ubuntu Pastebin: https://paste.ubuntu.com.cn/",
         "Hastebin (DimDev): http://paste.dimdev.org/",
         "CurseForge Minecraft Mods: https://www.curseforge.com/minecraft/mc-mods/"
       ]
