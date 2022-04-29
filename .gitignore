@@ -1,7 +1,7 @@
 *
 test
 # whitelist
-!src/*
+!src/*.kt
 !gradle
 !build.gradle.kts
 !gradle.properties

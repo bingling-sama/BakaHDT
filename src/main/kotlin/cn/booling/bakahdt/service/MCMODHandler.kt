@@ -168,10 +168,10 @@ class MCMODProvider {
             val title = list[i].title
                 .replace(Regex("\\([^()]*\\)"), "")
                 .replace(Regex("\\[[^\\[\\]]*]"), "")
-                .replace(Regex("\\s*-\\s*"),"-")
-            builder.add(sender.id,i.toString(), PlainText(title))
+                .replace(Regex("\\s*-\\s*"), "-")
+            builder.add(sender.id, i.toString(), PlainText(title))
         }
-        if(searchResultsList.size > 0) builder.add(sender, PlainText("回复[P]下一页"))
+        if (searchResultsList.size > 0) builder.add(sender, PlainText("回复[P]下一页"))
         return builder.build()
     }
 

@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "cn.booling.bakahdt"
-version = "0.3.4-SNAPSHOT"
+version = "0.3.5-SNAPSHOT"
 
 tasks.withType<ShadowJar> {
     manifest.attributes["Main-Class"] = "cn.booling.bakahdt.MainKt"
@@ -33,9 +33,8 @@ dependencies {
     runtimeOnly("net.mamoe:mirai-core:$miraiVersion")
     api("net.mamoe:mirai-console:$miraiVersion")
 
-//    api("com.github.limbang:mirai-console-mcmod-plugin:v1.1.2")
-
     implementation("org.jsoup:jsoup:1.14.3")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("org.apache.logging.log4j:log4j-core:2.17.0")
     implementation("com.google.code.gson:gson:2.8.9")

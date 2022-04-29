@@ -7,7 +7,7 @@ object TextFields {
     val INFO = MessageChainBuilder()
         .append(
             """
-            ${BOT_NAME}是由[冰凌sama]为Minecraft魔改交流群开发的QQ bot，由[bakahdt]友情提供Server
+            ${BOT_NAME}是由[冰凌sama]为Minecraft魔改交流群开发的QQ bot，由[GBL]友情提供Server
             GitHub仓库地址：https://github.com/bingling-sama/BakaHDT/
             有任何意见或建议(或整活的idea)都可以来发issues。
             """.trimIndent()
@@ -22,7 +22,7 @@ object TextFields {
             欢迎加入Minecraft魔改交流群，进群请先阅读所有置顶公告。提问请携带尽可能多的相关信息
             Discord群：https://discord.gg/sB9PhGcutE/
             CRT等魔改类模组错误还需附带脚本内容和输出LOG。
-            详见&ask&pastebin&log
+            详见/ask/pastebin/log
             -----------------
             能解决你大部分疑惑的视频:
             https://b23.tv/Qu6aAY
